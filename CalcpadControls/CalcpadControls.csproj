@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{520894E4-CA69-484E-AFFB-20AC93F143E4}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>Calcpad.CalcpadControls</RootNamespace>
+    <AssemblyName>Calcpad.CalcpadControls</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Calcpad.Core">
+      <HintPath>..\Calcpad.Wpf\bin\Debug\net8.0-windows\Calcpad.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Calcpad.OpenXml">
+      <HintPath>..\Calcpad.Wpf\bin\Debug\net8.0-windows\Calcpad.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.54.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\Calcpad.Wpf\packages\HtmlAgilityPack.1.11.54\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Calcpad.Wpf\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Calcpad.Wpf\packages\System.Drawing.Common.8.0.0-rc.2.23479.14\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Calcpad.Wpf\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Calcpad.Wpf\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Calcpad.Wpf\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ctrlCalcpad.xaml.cs">
+      <DependentUpon>ctrlCalcpad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefined.cs" />
+    <Compile Include="WebBrowserWrapper.cs" />
+    <Compile Include="zip.cs" />
+    <Page Include="ctrlCalcpad.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FindReplaceWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AppMessages.Designer.cs" />
+    <Compile Include="BinaryStructConverter.cs" />
+    <Compile Include="BitmapPaster.cs" />
+    <Compile Include="ConstantsResources.Designer.cs" />
+    <Compile Include="Crypto.cs" />
+    <Compile Include="FindReplace.cs" />
+    <Compile Include="FindReplaceResources.Designer.cs" />
+    <Compile Include="FindReplaceWindow.xaml.cs">
+      <DependentUpon>FindReplaceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HighLighter.cs" />
+    <Compile Include="InputBox.cs" />
+    <Compile Include="MathResources.Designer.cs" />
+    <Compile Include="ScreenMetrics.cs" />
+    <Compile Include="UndoManager.cs" />
+    <Compile Include="UnitsResources.Designer.cs" />
+    <Compile Include="UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="AppMessages.bg.resx" />
+    <EmbeddedResource Include="AppMessages.resx" />
+    <EmbeddedResource Include="ConstantsResources.bg.resx" />
+    <EmbeddedResource Include="ConstantsResources.resx" />
+    <EmbeddedResource Include="FindReplaceResources.bg.resx" />
+    <EmbeddedResource Include="FindReplaceResources.resx" />
+    <EmbeddedResource Include="MathResources.bg.resx" />
+    <EmbeddedResource Include="MathResources.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitsResources.bg.resx" />
+    <EmbeddedResource Include="UnitsResources.resx" />
+    <None Include="app.config" />
+    <None Include="doc\help.bg.docx" />
+    <None Include="doc\help.bg.pdf" />
+    <None Include="doc\help.docx" />
+    <None Include="doc\help.pdf" />
+    <Resource Include="Fonts\Jost-100-Hairline.otf" />
+    <Resource Include="Fonts\Jost-200-Thin.otf" />
+    <Resource Include="Fonts\Roboto-Black.ttf" />
+    <Resource Include="Fonts\Roboto-BlackItalic.ttf" />
+    <Resource Include="Fonts\Roboto-Bold.ttf" />
+    <Resource Include="Fonts\Roboto-BoldItalic.ttf" />
+    <Resource Include="Fonts\Roboto-Italic.ttf" />
+    <Resource Include="Fonts\Roboto-Light.ttf" />
+    <Resource Include="Fonts\Roboto-LightItalic.ttf" />
+    <Resource Include="Fonts\Roboto-Medium.ttf" />
+    <Resource Include="Fonts\Roboto-MediumItalic.ttf" />
+    <Resource Include="Fonts\Roboto-Regular.ttf" />
+    <Resource Include="Fonts\Roboto-Thin.ttf" />
+    <Resource Include="Fonts\Roboto-ThinItalic.ttf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="calcpad.ico" />
+    <Content Include="doc\help.bg.html" />
+    <Resource Include="favicon.ico" />
+    <Content Include="wkhtmltopdf.exe" />
+    <Resource Include="resources\calc.png" />
+    <Resource Include="resources\calcpad.ico" />
+    <Resource Include="resources\copy.png" />
+    <Resource Include="resources\find.png" />
+    <Resource Include="resources\form.png" />
+    <Resource Include="resources\help.png" />
+    <Resource Include="resources\image.png" />
+    <Resource Include="resources\logo.png" />
+    <Resource Include="resources\new.png" />
+    <Resource Include="resources\open.png" />
+    <Resource Include="resources\paste.png" />
+    <Resource Include="resources\pdf.png" />
+    <Resource Include="resources\play.png" />
+    <Resource Include="resources\print.png" />
+    <Resource Include="resources\redo.png" />
+    <Resource Include="resources\save.png" />
+    <Resource Include="resources\search.png" />
+    <Resource Include="resources\undo.png" />
+    <Resource Include="resources\word.png" />
+    <Resource Include="doc\HELP.bg.TXT" />
+    <Content Include="doc\help.html" />
+    <Resource Include="doc\HELP.TXT" />
+    <Resource Include="doc\Images\Calc.png" />
+    <Resource Include="doc\Images\calcpad.ico" />
+    <Resource Include="doc\Images\Calcpad.png" />
+    <Resource Include="doc\Images\Copy.png" />
+    <Resource Include="doc\Images\FindDialog.bg.png" />
+    <Resource Include="doc\Images\FindDialog.png" />
+    <Resource Include="doc\Images\Form.png" />
+    <Resource Include="doc\Images\Fourier.png" />
+    <Resource Include="doc\Images\Help.png" />
+    <Resource Include="doc\Images\Image.png" />
+    <Resource Include="doc\Images\Interactive.png" />
+    <Resource Include="doc\Images\Keyboard.bg.png" />
+    <Resource Include="doc\Images\Keyboard.png" />
+    <Resource Include="doc\Images\Logo.png" />
+    <Resource Include="doc\Images\Mandelbrot.png" />
+    <Resource Include="doc\Images\Map-Wave.png" />
+    <Resource Include="doc\Images\Math.jpg" />
+    <Resource Include="doc\Images\New.png" />
+    <Resource Include="doc\Images\Next.png" />
+    <Resource Include="doc\Images\Open.png" />
+    <Resource Include="doc\Images\PageSetup.png" />
+    <Resource Include="doc\Images\Paste.png" />
+    <Resource Include="doc\Images\Pdf.png" />
+    <Resource Include="doc\Images\Play.png" />
+    <Resource Include="doc\Images\Plot-Fermat.png" />
+    <Resource Include="doc\Images\Plot-Leaf.png" />
+    <Resource Include="doc\Images\Plot-Rose.png" />
+    <Resource Include="doc\Images\Plot.png" />
+    <Resource Include="doc\Images\Print.png" />
+    <Resource Include="doc\Images\PrintDialog.png" />
+    <Resource Include="doc\Images\PrintPreview.png" />
+    <Resource Include="doc\Images\PromptSave.bg.png" />
+    <Resource Include="doc\Images\PromptSave.png" />
+    <Resource Include="doc\Images\Redo.png" />
+    <Resource Include="doc\Images\Root.png" />
+    <Resource Include="doc\Images\Sample.bg.png" />
+    <Resource Include="doc\Images\Sample.png" />
+    <Resource Include="doc\Images\Sample1.bg.png" />
+    <Resource Include="doc\Images\Sample1.png" />
+    <Resource Include="doc\Images\Sample2.bg.png" />
+    <Resource Include="doc\Images\Sample2.png" />
+    <Resource Include="doc\Images\Sample3.bg.png" />
+    <Resource Include="doc\Images\Sample3.png" />
+    <Resource Include="doc\Images\Sample4.bg.png" />
+    <Resource Include="doc\Images\Sample4.png" />
+    <Resource Include="doc\Images\Sample5.bg.png" />
+    <Resource Include="doc\Images\Sample5.png" />
+    <Resource Include="doc\Images\Save.png" />
+    <Resource Include="doc\Images\Search.png" />
+    <Resource Include="doc\Images\Undo.png" />
+    <Resource Include="doc\Images\Word.png" />
+    <Content Include="doc\jquery-3.6.3.min.js" />
+    <Resource Include="doc\LICENSE.bg.TXT" />
+    <Resource Include="doc\LICENSE.TXT" />
+    <Content Include="doc\parsing.bg.html" />
+    <Content Include="doc\parsing.html" />
+    <Content Include="doc\readme.bg.html" />
+    <Content Include="doc\readme.html" />
+    <Content Include="doc\source.html" />
+    <Content Include="doc\template.bg.html" />
+    <Content Include="doc\template.html" />
+    <Resource Include="doc\typing.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
